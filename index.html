@@ -1,14 +1,781 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-</head>
-<body>
-    
-<h1>Hello this is Namroz Khan Kakar</h1>
 
+    <title>Muhammad Namroz | Software Developer</title>
+
+    <meta name="description" content="Muhammad Namroz - Information Technology Student, Aspiring Software Developer and Web Technology Enthusiast.">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    },
+                    colors: {
+                        primary: '#6366f1',
+                        secondary: '#8b5cf6',
+                        dark: '#080b16'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background: #080b16;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #818cf8, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .glass {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            backdrop-filter: blur(12px);
+        }
+
+        .glow {
+            box-shadow: 0 0 40px rgba(99,102,241,0.15);
+        }
+
+        .card {
+            transition: 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+            border-color: #6366f1;
+        }
+
+        .skill-bar {
+            height: 7px;
+            border-radius: 20px;
+            background: #252a3b;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            border-radius: 20px;
+            background: linear-gradient(90deg, #6366f1, #a855f7);
+        }
+
+        .section-padding {
+            padding-top: 100px;
+            padding-bottom: 100px;
+        }
+
+        ::selection {
+            background: #6366f1;
+            color: white;
+        }
+    </style>
+</head>
+
+<body class="text-gray-200 font-sans">
+
+<!-- NAVBAR -->
+
+<header class="fixed top-0 w-full z-50 glass">
+
+    <nav class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+
+        <a href="#home" class="text-2xl font-bold gradient-text">
+            MN<span class="text-white">.</span>
+        </a>
+
+        <div class="hidden md:flex gap-8 text-sm text-gray-300">
+
+            <a href="#home" class="hover:text-indigo-400">Home</a>
+            <a href="#about" class="hover:text-indigo-400">About</a>
+            <a href="#skills" class="hover:text-indigo-400">Skills</a>
+            <a href="#education" class="hover:text-indigo-400">Education</a>
+            <a href="#projects" class="hover:text-indigo-400">Projects</a>
+            <a href="#contact" class="hover:text-indigo-400">Contact</a>
+
+        </div>
+
+        <a href="#contact"
+           class="hidden md:block bg-indigo-600 hover:bg-indigo-700 px-5 py-2 rounded-lg text-sm font-semibold">
+            Let's Connect
+        </a>
+
+        <button id="menu-btn"
+                class="md:hidden text-2xl"
+                aria-label="Toggle navigation"
+                aria-expanded="false">
+            ☰
+        </button>
+
+    </nav>
+
+    <div id="mobile-menu" class="hidden md:hidden px-6 pb-6 space-y-4">
+
+        <a href="#home" class="block">Home</a>
+        <a href="#about" class="block">About</a>
+        <a href="#skills" class="block">Skills</a>
+        <a href="#education" class="block">Education</a>
+        <a href="#projects" class="block">Projects</a>
+        <a href="#contact" class="block">Contact</a>
+
+    </div>
+
+</header>
+
+
+<!-- HERO SECTION -->
+
+<section id="home" class="min-h-screen flex items-center pt-24 px-6">
+
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+
+        <div>
+
+            <p class="text-indigo-400 font-semibold mb-5 tracking-widest uppercase text-sm">
+                Welcome to my portfolio
+            </p>
+
+            <h1 class="text-5xl md:text-7xl font-bold leading-tight">
+
+                Muhammad <br>
+
+                <span class="gradient-text">Namroz</span>
+
+            </h1>
+
+            <h2 class="text-xl md:text-2xl text-gray-300 mt-6">
+                Information Technology Student
+            </h2>
+
+            <p class="text-gray-400 mt-6 leading-8 max-w-xl">
+
+                I am an aspiring software developer passionate about
+                programming, web technologies, artificial intelligence,
+                and building innovative digital solutions.
+
+            </p>
+
+            <div class="flex flex-wrap gap-4 mt-9">
+
+                <a href="#projects"
+                   class="bg-indigo-600 hover:bg-indigo-700 px-7 py-3 rounded-lg font-semibold transition">
+                    Explore My Work →
+                </a>
+
+                <a href="#contact"
+                   class="border border-gray-600 hover:border-indigo-500 px-7 py-3 rounded-lg transition">
+                    Contact Me
+                </a>
+
+            </div>
+
+            <div class="flex gap-6 mt-10 text-gray-400 text-sm">
+
+                <span>📍 Pakistan</span>
+                <span>🎓 IT Student</span>
+                <span>💻 Developer</span>
+
+            </div>
+
+        </div>
+
+
+        <div class="flex justify-center">
+
+            <div class="relative w-72 h-72 md:w-96 md:h-96">
+
+                <div class="absolute inset-0 rounded-full bg-indigo-600 blur-3xl opacity-20"></div>
+
+                <div class="relative glass glow rounded-3xl w-full h-full flex flex-col justify-center items-center">
+
+                    <div class="text-8xl font-bold gradient-text">
+                        MN
+                    </div>
+
+                    <h3 class="text-2xl font-bold mt-6">
+                        Muhammad Namroz
+                    </h3>
+
+                    <p class="text-gray-400 mt-2">
+                        Future Software Developer
+                    </p>
+
+                    <div class="mt-6 text-indigo-400 font-mono text-sm">
+                        &lt; Building the Future /&gt;
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT SECTION -->
+
+<section id="about" class="section-padding px-6 bg-white/[0.02]">
+
+    <div class="max-w-7xl mx-auto">
+
+        <div class="text-center mb-16">
+
+            <p class="text-indigo-400 uppercase tracking-widest text-sm">
+                Introduction
+            </p>
+
+            <h2 class="text-4xl font-bold mt-3">
+                About <span class="gradient-text">Me</span>
+            </h2>
+
+        </div>
+
+
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+
+            <div>
+
+                <h3 class="text-3xl font-bold mb-6">
+                    Passionate About Technology & Innovation
+                </h3>
+
+                <p class="text-gray-400 leading-8">
+
+                    Hello! I'm Muhammad Namroz, an Information Technology
+                    student at the University of Balochistan, Department
+                    of Computer Science.
+
+                    <br><br>
+
+                    I enjoy learning programming, exploring modern web
+                    technologies, understanding computer systems, and
+                    developing my technical knowledge.
+
+                    <br><br>
+
+                    My goal is to become a skilled software developer
+                    and create practical solutions that make a difference.
+
+                </p>
+
+            </div>
+
+
+            <div class="grid grid-cols-2 gap-4">
+
+                <div class="glass p-7 rounded-2xl card">
+                    <h3 class="text-indigo-400 text-3xl font-bold">04</h3>
+                    <p class="text-gray-400 mt-2">Current Semester</p>
+                </div>
+
+                <div class="glass p-7 rounded-2xl card">
+                    <h3 class="text-indigo-400 text-3xl font-bold">05+</h3>
+                    <p class="text-gray-400 mt-2">Web Technologies</p>
+                </div>
+
+                <div class="glass p-7 rounded-2xl card">
+                    <h3 class="text-indigo-400 text-3xl font-bold">18</h3>
+                    <p class="text-gray-400 mt-2">Academic Subjects</p>
+                </div>
+
+                <div class="glass p-7 rounded-2xl card">
+                    <h3 class="text-indigo-400 text-3xl font-bold">∞</h3>
+                    <p class="text-gray-400 mt-2">Learning Mindset</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SKILLS SECTION -->
+
+<section id="skills" class="section-padding px-6">
+
+    <div class="max-w-7xl mx-auto">
+
+        <div class="text-center mb-16">
+
+            <p class="text-indigo-400 uppercase tracking-widest text-sm">
+                My Expertise
+            </p>
+
+            <h2 class="text-4xl font-bold mt-3">
+                Technical <span class="gradient-text">Skills</span>
+            </h2>
+
+        </div>
+
+
+        <div class="grid md:grid-cols-2 gap-8">
+
+
+            <!-- WEB SKILLS -->
+
+            <div class="glass rounded-2xl p-8">
+
+                <h3 class="text-2xl font-bold mb-8">
+                    Web Technologies
+                </h3>
+
+                <div class="space-y-7">
+
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span>HTML5</span>
+                            <span class="text-indigo-400">Learning</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress w-3/4"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span>CSS3</span>
+                            <span class="text-indigo-400">Learning</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress w-3/4"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span>XML</span>
+                            <span class="text-indigo-400">Learning</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress w-2/3"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span>XHTML</span>
+                            <span class="text-indigo-400">Learning</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress w-2/3"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span>Tailwind CSS</span>
+                            <span class="text-indigo-400">Learning</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress w-1/2"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- OTHER SKILLS -->
+
+            <div class="glass rounded-2xl p-8">
+
+                <h3 class="text-2xl font-bold mb-8">
+                    Programming & Technology
+                </h3>
+
+                <div class="flex flex-wrap gap-3">
+
+                    <span class="bg-indigo-500/10 border border-indigo-500/30 px-4 py-3 rounded-lg">C++</span>
+
+                    <span class="bg-indigo-500/10 border border-indigo-500/30 px-4 py-3 rounded-lg">DSA</span>
+
+                    <span class="bg-indigo-500/10 border border-indigo-500/30 px-4 py-3 rounded-lg">Artificial Intelligence</span>
+
+                    <span class="bg-indigo-500/10 border border-indigo-500/30 px-4 py-3 rounded-lg">Computer Networks</span>
+
+                    <span class="bg-indigo-500/10 border border-indigo-500/30 px-4 py-3 rounded-lg">Information Security</span>
+
+                    <span class="bg-indigo-500/10 border border-indigo-500/30 px-4 py-3 rounded-lg">Database Systems</span>
+
+                    <span class="bg-indigo-500/10 border border-indigo-500/30 px-4 py-3 rounded-lg">Operating Systems</span>
+
+                    <span class="bg-indigo-500/10 border border-indigo-500/30 px-4 py-3 rounded-lg">Assembly Language</span>
+
+                </div>
+
+                <div class="mt-10">
+
+                    <h4 class="font-bold text-lg mb-3">
+                        Current Focus
+                    </h4>
+
+                    <p class="text-gray-400 leading-7">
+                        Improving web development skills, programming
+                        fundamentals, and exploring artificial intelligence.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EDUCATION SECTION -->
+
+<section id="education" class="section-padding px-6 bg-white/[0.02]">
+
+    <div class="max-w-5xl mx-auto">
+
+        <div class="text-center mb-16">
+
+            <p class="text-indigo-400 uppercase tracking-widest text-sm">
+                My Journey
+            </p>
+
+            <h2 class="text-4xl font-bold mt-3">
+                Education & <span class="gradient-text">Learning</span>
+            </h2>
+
+        </div>
+
+
+        <div class="glass p-8 md:p-10 rounded-2xl border-l-4 border-indigo-500">
+
+            <p class="text-indigo-400 text-sm font-semibold">
+                CURRENT EDUCATION
+            </p>
+
+            <h3 class="text-2xl font-bold mt-4">
+                Bachelor of Information Technology
+            </h3>
+
+            <p class="text-gray-300 mt-3">
+                University of Balochistan
+            </p>
+
+            <p class="text-gray-400 mt-2">
+                Department of Computer Science
+            </p>
+
+            <p class="text-indigo-400 mt-5">
+                4th Semester
+            </p>
+
+        </div>
+
+
+        <h3 class="text-2xl font-bold mt-16 mb-8">
+            Academic Subjects
+        </h3>
+
+
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+
+            <div class="glass p-5 rounded-xl">Programming in C++</div>
+            <div class="glass p-5 rounded-xl">Data Structures & Algorithms</div>
+            <div class="glass p-5 rounded-xl">Calculus</div>
+            <div class="glass p-5 rounded-xl">Statistics</div>
+            <div class="glass p-5 rounded-xl">Applied Physics</div>
+            <div class="glass p-5 rounded-xl">Discrete Mathematics</div>
+            <div class="glass p-5 rounded-xl">Digital Logic Design</div>
+            <div class="glass p-5 rounded-xl">Expository Writing</div>
+            <div class="glass p-5 rounded-xl">Information Security</div>
+            <div class="glass p-5 rounded-xl">Web Technologies</div>
+            <div class="glass p-5 rounded-xl">MS Access Database</div>
+            <div class="glass p-5 rounded-xl">Artificial Intelligence</div>
+            <div class="glass p-5 rounded-xl">Linear Algebra</div>
+            <div class="glass p-5 rounded-xl">Computer Networks</div>
+            <div class="glass p-5 rounded-xl">Assembly Language</div>
+            <div class="glass p-5 rounded-xl">Operating Systems</div>
+            <div class="glass p-5 rounded-xl">English</div>
+            <div class="glass p-5 rounded-xl">ICT</div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROJECTS SECTION -->
+
+<section id="projects" class="section-padding px-6">
+
+    <div class="max-w-7xl mx-auto">
+
+        <div class="text-center mb-16">
+
+            <p class="text-indigo-400 uppercase tracking-widest text-sm">
+                My Work
+            </p>
+
+            <h2 class="text-4xl font-bold mt-3">
+                Featured <span class="gradient-text">Projects</span>
+            </h2>
+
+            <p class="text-gray-400 mt-5">
+                A showcase of my learning and development journey.
+            </p>
+
+        </div>
+
+
+        <div class="grid md:grid-cols-3 gap-6">
+
+
+            <div class="glass p-7 rounded-2xl card">
+
+                <div class="text-indigo-400 text-3xl mb-5">01</div>
+
+                <h3 class="text-xl font-bold">
+                    Personal Portfolio
+                </h3>
+
+                <p class="text-gray-400 mt-4 leading-7">
+                    A responsive personal portfolio website built
+                    using HTML and Tailwind CSS.
+                </p>
+
+                <div class="flex flex-wrap gap-2 mt-6">
+                    <span class="text-xs bg-indigo-500/20 px-3 py-2 rounded">HTML</span>
+                    <span class="text-xs bg-indigo-500/20 px-3 py-2 rounded">Tailwind CSS</span>
+                </div>
+
+            </div>
+
+
+            <div class="glass p-7 rounded-2xl card">
+
+                <div class="text-purple-400 text-3xl mb-5">02</div>
+
+                <h3 class="text-xl font-bold">
+                    C++ Programming Projects
+                </h3>
+
+                <p class="text-gray-400 mt-4 leading-7">
+                    Academic programming exercises focusing on
+                    object-oriented programming and problem-solving.
+                </p>
+
+                <div class="flex flex-wrap gap-2 mt-6">
+                    <span class="text-xs bg-purple-500/20 px-3 py-2 rounded">C++</span>
+                    <span class="text-xs bg-purple-500/20 px-3 py-2 rounded">OOP</span>
+                </div>
+
+            </div>
+
+
+            <div class="glass p-7 rounded-2xl card">
+
+                <div class="text-blue-400 text-3xl mb-5">03</div>
+
+                <h3 class="text-xl font-bold">
+                    AI Learning Projects
+                </h3>
+
+                <p class="text-gray-400 mt-4 leading-7">
+                    Exploring artificial intelligence concepts
+                    and developing beginner-level AI projects.
+                </p>
+
+                <div class="flex flex-wrap gap-2 mt-6">
+                    <span class="text-xs bg-blue-500/20 px-3 py-2 rounded">AI</span>
+                    <span class="text-xs bg-blue-500/20 px-3 py-2 rounded">Learning</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <p class="text-center text-gray-500 text-sm mt-8">
+            Replace these sample project cards with links to your actual GitHub repositories.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- INTEREST SECTION -->
+
+<section class="section-padding px-6 bg-white/[0.02]">
+
+    <div class="max-w-7xl mx-auto text-center">
+
+        <p class="text-indigo-400 uppercase tracking-widest text-sm">
+            What Drives Me
+        </p>
+
+        <h2 class="text-4xl font-bold mt-3 mb-12">
+            Areas of <span class="gradient-text">Interest</span>
+        </h2>
+
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
+
+            <div class="glass p-7 rounded-xl card">
+                <h3 class="font-bold">Web Development</h3>
+            </div>
+
+            <div class="glass p-7 rounded-xl card">
+                <h3 class="font-bold">Artificial Intelligence</h3>
+            </div>
+
+            <div class="glass p-7 rounded-xl card">
+                <h3 class="font-bold">Cybersecurity</h3>
+            </div>
+
+            <div class="glass p-7 rounded-xl card">
+                <h3 class="font-bold">Software Engineering</h3>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT SECTION -->
+
+<section id="contact" class="section-padding px-6">
+
+    <div class="max-w-4xl mx-auto text-center">
+
+        <p class="text-indigo-400 uppercase tracking-widest text-sm">
+            Get In Touch
+        </p>
+
+        <h2 class="text-4xl md:text-5xl font-bold mt-4">
+            Let's Build Something <span class="gradient-text">Great</span>
+        </h2>
+
+        <p class="text-gray-400 mt-6 leading-8">
+            I'm always interested in learning, sharing ideas,
+            exploring technology, and connecting with fellow developers.
+        </p>
+
+
+        <div class="glass p-8 rounded-2xl mt-12">
+
+            <h3 class="text-2xl font-bold">
+                Connect With Me
+            </h3>
+
+            <p class="text-gray-400 mt-4">
+                Find me on GitHub and explore my development journey.
+            </p>
+
+            <a href="https://github.com/YOUR_USERNAME"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="inline-block mt-7 bg-indigo-600 hover:bg-indigo-700 px-8 py-3 rounded-lg font-semibold transition">
+
+                Visit My GitHub →
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer class="border-t border-white/10 py-8 px-6">
+
+    <div class="max-w-7xl mx-auto text-center">
+
+        <h3 class="text-2xl font-bold gradient-text">
+            Muhammad Namroz
+        </h3>
+
+        <p class="text-gray-500 mt-3 text-sm">
+            Information Technology Student | Aspiring Software Developer
+        </p>
+
+        <p class="text-gray-600 text-sm mt-6">
+            © <span id="year"></span> Muhammad Namroz. All Rights Reserved.
+        </p>
+
+        <p class="text-gray-600 text-xs mt-3">
+            Designed & Developed with HTML, Tailwind CSS and JavaScript.
+        </p>
+
+    </div>
+
+</footer>
+
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+    // Mobile Navigation
+
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    menuBtn.addEventListener("click", () => {
+
+        mobileMenu.classList.toggle("hidden");
+
+        const isOpen = !mobileMenu.classList.contains("hidden");
+
+        menuBtn.setAttribute("aria-expanded", isOpen);
+
+        menuBtn.textContent = isOpen ? "✕" : "☰";
+
+    });
+
+
+    // Close Mobile Menu After Clicking
+
+    document.querySelectorAll("#mobile-menu a").forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            mobileMenu.classList.add("hidden");
+
+            menuBtn.setAttribute("aria-expanded", "false");
+
+            menuBtn.textContent = "☰";
+
+        });
+
+    });
+
+
+    // Automatic Current Year
+
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
+
+</script>
 
 </body>
 </html>
